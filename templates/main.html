@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>
+        끝말잇기 인공지능
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form method="POST" action="/main">
+        <h1> 인공지능과 끝말잇기 </h1>
+
+        <h2> 표준국어대사전에 있는 단어만 인정합니다</h2>
+        <h3> 두음법칙은 적용되지 않습니다.</h3>
+        <input type="text" name="inputWord">
+        <button type="submit">입력</button>
+    </form>
+    <br>
+        <p>
+            {% if isStarted %}
+                {% if isWord == False %}
+                    <p style="color: red;"> 없는 단어입니다.</p>
+                {% endif %}
+                {% if usedWord == True %}
+                    <p style="color: red;"> 이미 사용한 단어입니다 </p>
+                {% endif %}
+                {% if startFromLast == False %}
+                    <p style="color: red;"> '{{gamelist[0][-1]}}' (으)로 시작하지 않습니다 </p>
+                {% endif %}
+                {% for i in range(0, lgl) %}
+                    {% if (i % 2 == 0 and endByPlayer == False) or (i % 2 == 1 and endByPlayer == True) %}
+                        {% if endByAi == True and i == 0 %}
+                            {{i}}
+                            <p style="color: red;"> 인공지능: {{gamelist[i]}} </p>
+                        {% else %}
+                            <p style="color: gray;"> 인공지능: {{gamelist[i]}} </p>
+                        {% endif %}
+                    {% else %}
+                        {% if endByPlayer == True and i == 0 %}
+                            <p style="color: red"> 나: {{gamelist[i]}} </p>
+                        {% else %}
+                            <p> 나: {{gamelist[i]}} </p>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                {% if isLose: %}
+                {% endif %}
+            {% endif %}
+
+
+        </p>
+    </div>
+</body>
+</html>

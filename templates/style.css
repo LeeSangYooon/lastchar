@@ -1,0 +1,33 @@
+h1 {
+    position: absolute;
+    left: 75px;
+    top: 10px;
+    font-size: 38px;
+}
+h2 {
+    position: relative;
+    left: 75px;
+    top: 105px;
+    font-size: 16px;
+}
+h3 {
+    position: relative;
+    left: 75px;
+    top: 90px;
+    font-size: 16px;
+}
+p {
+    position: relative;
+    left: 75px;
+}
+
+input {
+    position: relative;
+    left: 75px;
+}
+
+button {
+    position: relative;
+    left: 75px;
+    top: 105px;
+}
